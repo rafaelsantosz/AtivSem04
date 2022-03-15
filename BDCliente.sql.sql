@@ -1,0 +1,13 @@
+CREATE DATABASE BDCliente
+GO
+
+USE BDCliente
+GO
+
+CREATE TABLE VendasCliente(
+	idVenda INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	codigoCliente INT NOT NULL,
+	dataVenda DATE NOT NULL,
+	valorVenda FLOAT NOT NULL
+)
+GO

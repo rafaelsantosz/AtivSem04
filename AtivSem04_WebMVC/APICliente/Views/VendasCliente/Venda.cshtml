@@ -1,0 +1,47 @@
+﻿@model APICliente.Models.VendasCliente
+
+@{
+    ViewBag.Title = "Venda";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <h2 style="text-decoration: underline">Realizar uma Venda</h2>
+        <hr />
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Código do Cliente: </b>
+            <div class="col-md-5">
+                <input asp-for="CodigoCliente" class="form-control" />
+                <span asp-validation-for="CodigoCliente" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Valor da Venda: </b>
+            <div class="col-md-5">
+                <input asp-for="ValorVenda" class="form-control" />
+                <span asp-validation-for="ValorVenda" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Data: </b>
+            <div class="col-md-5">
+                <input asp-for="DataVenda" class="form-control" />
+                <span asp-validation-for="DataVenda" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Vender" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
